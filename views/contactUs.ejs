@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <!-- Using Tailwind CSS via CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div
+      class="bg-[rgba(2, 60, 75, 0.10)] flex flex-col items-center gap-[48px] relative pt-24 pb-32"
+    >
+      <div
+        class="flex justify-between items-center gap-[24px] relative container"
+      >
+        <div
+          class="flex flex-col w-full items-start justify-center gap-[24px] pl-0 md:pr-[32px] py-0 relative rounded-[8px]"
+        >
+          <div
+            class="flex flex-col items-start gap-[8px] relative self-stretch w-full flex-[0_0_auto]"
+          >
+            <div
+              class="relative self-stretch mt-[-1.00px] font-bold text-[2rem]"
+            >
+              Contact Us
+            </div>
+          </div>
+          <form
+            action="/api/v1/messages/add"
+            method="POST"
+            class="flex flex-col h-[318px] items-start gap-[16px] relative self-stretch w-full"
+          >
+            <div
+              class="flex flex-col items-start gap-[16px] relative flex-1 self-stretch w-full grow"
+            >
+              <div
+                class="flex items-center gap-[10px] p-[16px] relative self-stretch w-full flex-[0_0_auto] rounded-[8px] overflow-hidden"
+                style="border: 1px solid #4e5a5e"
+              >
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="Name"
+                  class="bg-transparent w-full h-full outline-none placeholder:text-[#4E5A5E]"
+                />
+              </div>
+
+              <div
+                class="flex items-center gap-[10px] p-[16px] relative self-stretch w-full flex-[0_0_auto] rounded-[8px] overflow-hidden"
+                style="border: 1px solid #4e5a5e"
+              >
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  class="bg-transparent w-full h-full outline-none placeholder:text-[#4E5A5E]"
+                />
+              </div>
+
+              <div
+                class="flex items-center gap-[10px] p-[16px] relative self-stretch w-full flex-[0_0_auto] rounded-[8px] overflow-hidden"
+                style="border: 1px solid #4e5a5e"
+              >
+                <input
+                  name="phone"
+                  type="text"
+                  placeholder="Phone Number"
+                  class="bg-transparent w-full h-full outline-none placeholder:text-[#4E5A5E]"
+                />
+              </div>
+
+              <div
+                class="flex items-center gap-[10px] pt-[16px] px-[16px] relative self-stretch w-full flex-[0_0_auto] rounded-[8px] overflow-hidden"
+                style="border: 1px solid #4e5a5e"
+              >
+                <textarea
+                  name="message"
+                  cols="30"
+                  rows="6"
+                  placeholder="Message*"
+                  class="bg-transparent w-full h-full outline-none resize-none placeholder:text-[#4E5A5E]"
+                ></textarea>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="bg-[#731012] transition-all hover:bg-[#942B04] active:bg-[#642107] text-sm rounded-lg py-3 w-full text-white"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="imageCon hidden lg:inline-block w-full">
+          <div>
+            <div class="heading text-[3.25rem] font-extrabold">
+              Leave us A message, <br />
+              We are always
+              <span class="text-[#61BB46]"
+                >happy to <br />
+                reach you out !</span
+              >
+            </div>
+            <div class="paragraph text-sm">
+              Drop us a message anytime; we&apos;re here and eager to connect
+              with you! Your feedback, inquiries, or collaboration ideas are
+              always welcomed. Let&apos;s build something amazing together!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

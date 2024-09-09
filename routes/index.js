@@ -20,4 +20,9 @@ router.get("/homes", (req, res) => {
   res.render("home", { logoUrl });
 });
 
+router.get("/contact", (req, res) => {
+  const logoUrl =
+    "https://portal.innobrains.pk/files/system/_file64d57376183f5-site-logo.png";
+  res.render("contactUs", { logoUrl });
+});
 module.exports = router;
