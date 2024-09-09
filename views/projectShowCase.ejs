@@ -1,0 +1,108 @@
+<body class="bg-gray-50 pt-10 mx-24">
+  <div class="bg-gray-50 pt-10 mx-24">
+    <!-- Header Section -->
+    <div class="bg-white px-24 mx-auto rounded-md inline-block">
+      <h5 class="text-lg font-semibold flex items-center text-gray-800">
+        <span class="inline-block w-2 h-2 bg-black rounded-full mr-2"></span>
+        FEATURED PROJECTS
+      </h5>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex flex-col md:flex-row max-w-7xl mx-auto px-4 py-10">
+      <!-- Sidebar -->
+      <aside class="w-full md:w-1/4 mb-8 md:mb-0">
+        <ul class="relative pl-6">
+          <!-- Vertical Dashed Line -->
+          <div
+            class="absolute left-1.5 top-0 h-full border-l-2 border-dashed border-blue-400"
+          ></div>
+
+          <!-- List Items -->
+          <li
+            class="relative flex items-center text-blue-600 font-semibold mb-4"
+          >
+            <span
+              class="absolute left-[-1.4rem] w-2.5 h-2.5 bg-blue-800 rounded-full z-10"
+            ></span>
+            <span class="ml-4">ALL</span>
+          </li>
+          <li
+            class="relative flex items-center text-gray-600 hover:text-gray-800 font-semibold mb-4"
+          >
+            <span
+              class="absolute left-[-1.4rem] w-2.5 h-2.5 bg-gray-500 rounded-full z-10"
+            ></span>
+            <span class="ml-4">Softwares</span>
+          </li>
+          <li
+            class="relative flex items-center text-gray-600 hover:text-gray-800 font-semibold"
+          >
+            <span
+              class="absolute left-[-1.4rem] w-2.5 h-2.5 bg-gray-500 rounded-full z-10"
+            ></span>
+            <span class="ml-4">School Management</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Project Cards -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full md:w-3/4"
+      >
+        <!-- Card 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg h-96 w-full mx-auto">
+          <img
+            src="<%= projectImage %>"
+            alt="Edu-Brains"
+            class="w-full h-32 object-contain"
+          />
+          <h4 class="mt-4 text-xl font-semibold text-gray-800">Edu Brains</h4>
+          <p class="text-gray-600">School Management System</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white rounded-lg shadow-xl p-4 h-96 w-full mx-auto">
+          <div
+            class="bg-black rounded-t-lg p-6 flex justify-center items-center"
+          >
+            <img
+              src="<%= projectImage1 %>"
+              alt="Edu-Brains"
+              class="w-full h-32 object-contain"
+            />
+          </div>
+          <div class="p-4 text-center">
+            <h2 class="text-xl font-semibold text-gray-900">Edu Brains</h2>
+            <p class="text-gray-500">School Management System</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white rounded-lg shadow-xl h-96 w-full mx-auto">
+          <div
+            class="bg-black rounded-t-lg p-6 flex justify-center items-center"
+          >
+            <img
+              src="<%= projectImage1 %>"
+              alt="Edu-Brains"
+              class="w-full h-32 object-contain"
+            />
+          </div>
+          <div class="p-4 text-center">
+            <h2 class="text-xl font-semibold text-gray-900">Edu Brains</h2>
+            <p class="text-gray-500">School Management System</p>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="bg-white rounded-lg shadow-lg h-96 w-full">
+          <img
+            src="<%= projectImage %>"
+            alt="Edu-Brains"
+            class="w-full h-32 object-contain"
+          />
+          <h4 class="mt-4 text-xl font-semibold text-gray-800">Edu Brains</h4>
+          <p class="text-gray-600">School Management System</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

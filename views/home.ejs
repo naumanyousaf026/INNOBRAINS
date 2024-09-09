@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <!-- Include header -->
+    <%- include('partials/header', { logoUrl: logoUrl }) %>
+
+    <!-- Main content -->
+    <div class="py-16">
+      <div
+        class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between"
+      >
+        <!-- Text and Button Section -->
+        <div class="flex-1 md:pr-8 mb-8 md:mb-0 md:ml-[44px] md:mr-[44px]">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            We Provide the <span class="text-[#103153]">Best Services</span> for
+            Your Business
+          </h1>
+          <p class="text-gray-600 mb-6">
+            With over 15 years of experience, we offer expert consulting
+            services and innovative business solutions.
+          </p>
+          <button
+            class="bg-[#103153] mt-14 text-white text-lg font-semibold py-2 px-8 rounded-lg flex items-center hover:bg-[#0e2d49] transition duration-300"
+          >
+            Contact Us
+            <i class="fa fa-chevron-right ml-2"></i>
+          </button>
+        </div>
+
+        <!-- Image Section -->
+        <div class="flex-1 relative md:ml-[44px] md:mr-[44px]">
+          <img
+            src="/path/to/headerimage.jpg"
+            alt="Hero"
+            class="w-full h-auto object-cover rounded-lg shadow-md"
+          />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="relative">
+              <div
+                class="bg-yellow-400 rounded-full h-12 w-12 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                <i class="fa fa-play text-xl text-white"></i>
+              </div>
+              <div
+                class="absolute inset-0 bg-yellow-400 opacity-50 rounded-full blur-lg"
+              ></div>
+            </div>
+            <div class="absolute bottom-8 text-white font-semibold text-lg">
+              Watch Our Profile
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Include services section -->
+    <%- include('service') %>
+
+    <!-- Include footer -->
+    <%- include('partials/footer') %>
+
+    <!-- FontAwesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+  </body>
+</html>

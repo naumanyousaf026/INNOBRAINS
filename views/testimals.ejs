@@ -1,0 +1,153 @@
+<% // Define testimonials data const testimonials = [ { quote: "I will refer
+Startup to my Family.", description: "Lorem ipsum dolor sit amet, consectetur
+adipiscing elit. Nulla condimentum vel mauris sit amet molestie. Cras faucibus
+neque nisl, vel.", name: "Johnny Doe", title: "CEO of Startup Agency", rating:
+"5.0 / 5.0", }, { quote: "This service has changed my life!", description:
+"Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+turpis egestas. Vestibulum tortor quam, feugiat vitae.", name: "Jane Smith",
+title: "Entrepreneur", rating: "4.8 / 5.0", }, { quote: "Outstanding
+experience.", description: "Curabitur blandit tempus porttitor. Integer posuere
+erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur
+purus sit.", name: "Michael Johnson", title: "Freelancer", rating: "5.0 / 5.0",
+}, ]; // State to track the current testimonial let currentIndex = 0; %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonials</title>
+    <link href="/path/to/tailwind.css" rel="stylesheet" />
+    <!-- Ensure Tailwind CSS is linked -->
+  </head>
+  <body class="bg-gradient-to-b from-blue-50 to-white py-16 relative">
+    <div
+      class="max-w-lg mx-auto flex items-center justify-between mb-6 px-4 md:px-0"
+    >
+      <!-- Left Image with Shadow (commented out) -->
+      <!-- <div class="hidden md:block h-16 w-16 bg-white rounded-lg shadow-lg">
+      <img src="/path/to/left-image.jpeg" alt="Left Decoration" class="h-full w-full object-cover rounded-lg" />
+    </div> -->
+
+      <!-- Header -->
+      <div class="text-center flex-1 mx-4">
+        <div
+          class="inline-block bg-white text-gray-800 font-semibold py-2 px-6 rounded-lg mb-8"
+        >
+          <span class="flex items-center">
+            <span
+              class="inline-block text-2xl w-3 h-3 bg-[#103153] rounded-full mr-2"
+            ></span>
+            Customer Review
+          </span>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-900">
+          Clients <span class="text-blue-600">testimonials</span>
+        </h2>
+      </div>
+
+      <!-- Right Image with Shadow (commented out) -->
+      <!-- <div class="hidden md:block h-16 w-16 bg-white rounded-lg shadow-lg">
+      <img src="/path/to/right-image.jpeg" alt="Right Decoration" class="h-full w-full object-cover rounded-lg" />
+    </div> -->
+    </div>
+
+    <!-- Wrapper for positioning cards -->
+    <div class="relative max-w-lg mx-auto">
+      <!-- Second Card Behind the First Card, Positioned Lower -->
+      <div
+        class="absolute bg-white rounded-lg shadow-lg h-48 top-7 -translate-x-4 translate-y-4 p-8"
+        style="width: calc(100% + 95px)"
+      ></div>
+
+      <!-- Main Testimonial Card -->
+      <div
+        class="relative bg-white rounded-lg shadow-lg h-72 p-8 left-3"
+        style="width: calc(100% + 40px)"
+      >
+        <p class="text-xl font-semibold text-gray-900 mb-4 text-justify">
+          <%= testimonials[currentIndex].quote %>
+        </p>
+        <p class="text-gray-600 mb-4 text-justify">
+          <%= testimonials[currentIndex].description %>
+        </p>
+
+        <!-- User Info -->
+        <div class="flex items-center">
+          <div class="bg-green-500 h-10 w-10 rounded-full mr-4"></div>
+          <div>
+            <h4 class="font-semibold text-gray-900">
+              <%= testimonials[currentIndex].name %>
+            </h4>
+            <p class="text-sm text-gray-600">
+              <%= testimonials[currentIndex].title %>
+            </p>
+          </div>
+          <div class="ml-auto flex items-center">
+            <span class="text-yellow-500 text-lg">★</span>
+            <span class="ml-1 text-gray-900 font-semibold"
+              ><%= testimonials[currentIndex].rating %></span
+            >
+          </div>
+        </div>
+
+        <!-- Pagination Dots -->
+        <div
+          class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2 mt-4"
+        >
+          <% testimonials.forEach((_, index) => { %>
+          <span
+            class="block h-2 w-2 rounded-full cursor-pointer <%= index === currentIndex ? 'bg-gray-600' : 'bg-gray-300' %>"
+            data-index="<%= index %>"
+          ></span>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript to handle the carousel
+      document
+        .querySelectorAll(".block.h-2.w-2.rounded-full")
+        .forEach((dot) => {
+          dot.addEventListener("click", function () {
+            const index = parseInt(this.getAttribute("data-index"), 10);
+            // Update currentIndex
+            document.querySelector(
+              ".relative.bg-white.rounded-lg.shadow-lg.h-72.p-8"
+            ).innerHTML = `
+          <p class="text-xl font-semibold text-gray-900 mb-4 text-justify">
+            <%= testimonials[index].quote %>
+          </p>
+          <p class="text-gray-600 mb-4 text-justify">
+            <%= testimonials[index].description %>
+          </p>
+          <div class="flex items-center">
+            <div class="bg-green-500 h-10 w-10 rounded-full mr-4"></div>
+            <div>
+              <h4 class="font-semibold text-gray-900"><%= testimonials[index].name %></h4>
+              <p class="text-sm text-gray-600"><%= testimonials[index].title %></p>
+            </div>
+            <div class="ml-auto flex items-center">
+              <span class="text-yellow-500 text-lg">★</span>
+              <span class="ml-1 text-gray-900 font-semibold"><%= testimonials[index].rating %></span>
+            </div>
+          </div>
+        `;
+            document
+              .querySelectorAll(".block.h-2.w-2.rounded-full")
+              .forEach((dot) => {
+                dot.classList.toggle(
+                  "bg-gray-600",
+                  parseInt(dot.getAttribute("data-index"), 10) === index
+                );
+                dot.classList.toggle(
+                  "bg-gray-300",
+                  parseInt(dot.getAttribute("data-index"), 10) !== index
+                );
+              });
+          });
+        });
+    </script>
+  </body>
+</html>

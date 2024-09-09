@@ -1,0 +1,81 @@
+
+  <body class="bg-white">
+    <div class="py-10 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-6">
+          Explore <span class="text-blue-600">article</span> and information
+        </h2>
+
+        <div class="slider">
+          <!-- First Slide -->
+          <div class="p-4">
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+              <img
+                src="https://via.placeholder.com/400"
+                alt="Blog post"
+                class="w-full h-48 object-cover rounded-lg mb-4"
+              />
+            </div>
+          </div>
+          
+              <p class="text-gray-500 text-sm mb-2">June 21, 2023</p>
+              <h3 class="text-lg font-semibold mb-2">
+                Growth your brand more bigger with these tools
+              </h3>
+              <p class="text-blue-600 font-semibold">Devs</p>
+              <a href="#" class="text-blue-600 underline"> Read More </a>
+            </div>
+          </div>
+
+          <!-- Second Slide -->
+          <div class="p-4">
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+              <img
+              src="https://via.placeholder.com/400"
+              alt="Blog post"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+              <p class="text-gray-500 text-sm mb-2">June 21, 2023</p>
+              <h3 class="text-lg font-semibold mb-2">
+                Growth your brand more bigger with these tools
+              </h3>
+              <p class="text-blue-600 font-semibold">Devs</p>
+              <a href="#" class="text-blue-600 underline"> Read More </a>
+            </div>
+          </div>
+
+          <!-- Repeat the above block for more slides -->
+        </div>
+
+        <div class="mt-6 text-center">
+          <button class="bg-blue-600 text-white py-2 px-4 rounded-full">
+            View All Our Article
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slick Carousel JS -->
+    <script src="/path/to/jquery.min.js"></script>
+    <script src="/path/to/slick.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".slider").slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 2, // Display 2 slides at a time
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 768, // Mobile responsive settings
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
+        });
+      });
+    </script>
+  </body>
+
