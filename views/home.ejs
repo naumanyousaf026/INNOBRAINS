@@ -65,8 +65,23 @@
       </div>
     </div>
 
-    <!-- Include services section -->
-    <%- include('contact') %>
+    <!-- Data Display Section -->
+    <div>
+      <ul>
+        <% if (datas && datas.length > 0) { %> <% datas.forEach(item => { %>
+        <li>
+          Name: <%= item.name %>,<br />
+          Email: <%= item.email %>
+        </li>
+        <% }); %> <% } else { %>
+        <li>No data available</li>
+        <% } %>
+      </ul>
+    </div>
+
+    <!-- Include contact us section -->
+    <%- include('contactUs') %>
+
     <!-- Include footer -->
     <%- include('partials/footer') %>
 

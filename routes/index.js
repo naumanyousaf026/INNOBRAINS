@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const dataStore = require("../dataStore"); // Import the dataStore module
 
+// Define routes
 router.get("/", (req, res) => {
   const logoUrl =
     "https://portal.innobrains.pk/files/system/_file64d57376183f5-site-logo.png";
@@ -17,7 +19,8 @@ router.get("/blogs", (req, res) => {
 router.get("/homes", (req, res) => {
   const logoUrl =
     "https://portal.innobrains.pk/files/system/_file64d57376183f5-site-logo.png";
-  res.render("home", { logoUrl });
+  const datas = dataStore.getDatas(); // Get the data from the store
+  res.render("home", { logoUrl, datas });
 });
 
 router.get("/contact", (req, res) => {
@@ -25,4 +28,5 @@ router.get("/contact", (req, res) => {
     "https://portal.innobrains.pk/files/system/_file64d57376183f5-site-logo.png";
   res.render("contactUs", { logoUrl });
 });
+
 module.exports = router;
